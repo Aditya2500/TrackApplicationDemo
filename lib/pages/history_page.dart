@@ -47,7 +47,7 @@ class _HistoryPageState extends State<HistoryPage> {
      var date = _date.text?.split('-');
      var from = _fromTime.text?.split(':');
      var to = _toTime.text?.split(':');
-   var fromDate =   DateTime.utc(int.parse(date[0] ==''?'':date[0]),int.parse(date[0] ==''?'':date[1]),int.parse(date[0] ==''?'':date[2]),
+     var fromDate =   DateTime.utc(int.parse(date[0] ==''?'':date[0]),int.parse(date[0] ==''?'':date[1]),int.parse(date[0] ==''?'':date[2]),
      int.parse(from[0] ==''?'':from[0]),int.parse(from[0] ==''?'':from[1]));
      var toDate =   DateTime.utc(int.parse(date[0] ==''?'':date[0]),int.parse(date[0] ==''?'':date[1]),int.parse(date[0] ==''?'':date[2]),
      int.parse(to[0] ==''?'':to[0]),int.parse(to[0] ==''?'':to[1]));
@@ -56,6 +56,7 @@ class _HistoryPageState extends State<HistoryPage> {
     await Session.setString('fromTime', fromDate.toString());
     await Session.setString('toTime', toDate.toString());
     await getDeviceLogs();
+    
   }
 
 
